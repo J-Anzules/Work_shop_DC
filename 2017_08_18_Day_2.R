@@ -81,3 +81,28 @@ filter(surveys, !is.na(weight), weight == max(weight))
 ## combination of group_by() and tally(). How could you get the same result using
 ## group_by() and summarize()? Hint: see ?n.
 
+surveys_complete <- surveys%>%
+  filter(species_id != "") %>%
+  filter(!is.na(weight))%>%
+  filter(!is.na(hindfoot_length))%>%
+  filter(sex != "")
+
+surveys_complete <- surveys %>%
+  filter(species_id != "",
+         !is.na(weight),
+         !is.na(hindfoot_length),
+         sex != "")
+
+species_count <- surveys_complete %>%
+  group_by(species_id) %>%
+  tally %>%
+  filter(n>=50)
+
+surveys_common_species <- surveys_complete%>%
+  filter(species_id %in% species_count$species_id)
+
+write.csv(surveys_common_species, file = "dataOutPut/surveys_complete.csv")
+
+##### END PART SOMETHING 
+##### PLOTTING
+
