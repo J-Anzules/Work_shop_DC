@@ -48,4 +48,6 @@ ggplot(data = average, aes(x=year, y = avg, color = species_id))+
   facet_wrap(~ species_id)+
   theme(axis.text.x = element_text(angle = 70), legend.position = 'none')
 
-ggsave("my_plot.png", )
+ggsave("my_plot.png")
+
+

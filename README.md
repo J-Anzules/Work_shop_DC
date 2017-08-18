@@ -1,6 +1,3 @@
-# Work_shop_DC
-Data carpentry at not Yosemite
-
 # my-project
 
 Playing with [Data Carpentry at UC Merced -  Yosemite](https://snacktavish.github.io/2017-08-17-Yosemite/).
